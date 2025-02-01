@@ -4,6 +4,12 @@
 	"description": "Zero-config TypeScript starter for modern Node.js development. ESM, Vitest, ESLint, Prettier. Production-ready in seconds! ⚡",
 	"main": "build/index.js",
 	"type": "module",
+	"bin": {
+		"create-typezero": "build/index.js"
+	},
+	"files": [
+		"build"
+	],
 	"scripts": {
 		"dev": "tsx watch src/index.ts",
 		"lint": "prettier --check . && eslint .",
@@ -12,7 +18,8 @@
 		"test:coverage": "vitest run --coverage",
 		"clean": "rimraf build",
 		"build": "rimraf build && tsc && tsc-alias",
-		"start": "node build/index.js"
+		"start": "node build/index.js",
+		"prepare": "npm run build"
 	},
 	"keywords": [
 		"nodejs",
@@ -24,16 +31,15 @@
 		"starter-kit",
 		"template",
 		"boilerplate",
-		"starter"
+		"starter",
+		"scaffold",
+		"generator"
 	],
 	"author": {
 		"name": "Mohammad Islam",
 		"url": "https://www.mislam.dev"
 	},
 	"license": "MIT",
-	"dependencies": {
-		"dotenv": "^16.4.5"
-	},
 	"devDependencies": {
 		"@eslint/compat": "^1.2.4",
 		"@eslint/js": "^9.1.0",
